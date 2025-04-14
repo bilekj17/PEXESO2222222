@@ -1,9 +1,11 @@
 package com.example.pexeso;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,7 +72,9 @@ public class HelloController {
             secondCard = card;
             canFlip = false;
 
-            checkCards();
+            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            pause.setOnFinished(e -> checkCards());
+            pause.play();
         }
     }
 
@@ -82,19 +86,18 @@ public class HelloController {
             secondCard = null;
             if (currentPlayer == 1){
                 score1++;
+                firstPlace.setText("player: "+currentPlayer+" má "+score1+" body/ů");
             }else if (currentPlayer == 2){
                 score2++;
+                secondPlace.setText("player: "+currentPlayer+" má "+score2+" body/ů");
             }
             if (gameOver() == true){
                 if (score1>score2){
-                    firstPlace.setText("player 1 has won "+score1);
-                    secondPlace.setText("player 2 has lost "+score2);
+                    vitez.setText("player: "+currentPlayer+" je vítěz");
                 } else if (score1 == score2) {
-                    firstPlace.setText("its draw"+score2+", "+score1);
-                    secondPlace.setText("No player is second");
+                    vitez.setText("oba hráči jsou vítezové: "+score1+", "+score2);
                 }else if(score2>score1){
-                    firstPlace.setText("player 2 has won "+score2);
-                    secondPlace.setText("player 1 has lost "+score1);
+                    vitez.setText("player: "+currentPlayer+" je vítěz");
                 }
             }
         }else{
@@ -102,8 +105,18 @@ public class HelloController {
             secondCard.flipBack();
             firstCard = null;
             secondCard = null;
+            if (currentPlayer == 1){
+                currentPlayer = 2;
+                onlinePlayer.setText("player: "+currentPlayer);
+            } else if (currentPlayer == 2){
+                currentPlayer = 1;
+                onlinePlayer.setText("player: "+currentPlayer);
+            }
         }
         canFlip = true;
+
+        System.out.println(score1);
+        System.out.println(score2);
     }
 
     private boolean gameOver(){
