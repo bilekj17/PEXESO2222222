@@ -7,16 +7,15 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="vitez" prefHeight="27.0" prefWidth="125.0" text="vítěz" />
-            <Label fx:id="firstPlace" prefHeight="18.0" prefWidth="125.0" text="Skoré prvního hráče" />
-            <Label fx:id="secondPlace" prefHeight="17.0" prefWidth="138.0" text="Skoré druhého hráče" />
-            <Label fx:id="onlinePlayer" text="Aktuální hráč" />
+            <Label fx:id="vitez" prefHeight="18.0" prefWidth="170.0" text="vítěz" styleClass="winColor"/>
+            <Label fx:id="firstPlace" prefHeight="18.0" prefWidth="125.0" text="Skoré prvního hráče" styleClass="firstP" />
+            <Label fx:id="secondPlace" prefHeight="17.0" prefWidth="138.0" text="Skoré druhého hráče" styleClass="secondP"/>
+            <Label fx:id="onlinePlayer" text="Aktuální hráč" styleClass="onlineP"/>
          </children>
       </HBox>
    </top>
    <center>
       <GridPane fx:id="grid" BorderPane.alignment="CENTER">
-
       </GridPane>
    </center>
 </BorderPane>

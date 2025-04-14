@@ -1,0 +1,22 @@
+.button {
+    -fx-background-color : lightblue ;
+    -fx-text-fill : black ;
+    -fx-font-weight : bold ;
+}
+
+.winColor{
+    -fx-text-fill: gold;
+}
+
+.firstP{
+    -fx-text-fill: green;
+}
+
+.secondP{
+    -fx-text-fill: blue;
+}
+
+.onlineP{
+    -fx-text-fill: red;
+}
+
