@@ -7,10 +7,29 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="vitez" prefHeight="18.0" prefWidth="170.0" text="vítěz" styleClass="winColor"/>
-            <Label fx:id="firstPlace" prefHeight="18.0" prefWidth="125.0" text="Skoré prvního hráče" styleClass="firstP" />
-            <Label fx:id="secondPlace" prefHeight="17.0" prefWidth="138.0" text="Skoré druhého hráče" styleClass="secondP"/>
-            <Label fx:id="onlinePlayer" text="Aktuální hráč" styleClass="onlineP"/>
+            <Label fx:id="vitez" prefHeight="18.0" prefWidth="170.0" styleClass="winColor" text="vítěz" />
+            <GridPane prefHeight="107.0" prefWidth="302.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="136.0" text="Skoré třetího hráče" GridPane.columnIndex="1" />
+                  <Label fx:id="firstPlace" prefHeight="18.0" prefWidth="149.0" styleClass="firstP" text="Skoré prvního hráče" />
+                  <Label fx:id="secondPlace" prefHeight="17.0" prefWidth="138.0" styleClass="secondP" text="Skoré druhého hráče" GridPane.rowIndex="1" />
+                  <Label text="Skoré čtvrtého hráče" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Skoré pátého hráče" GridPane.rowIndex="2" />
+                  <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Zadej počet hráčů" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Label fx:id="onlinePlayer" styleClass="onlineP" text="Aktuální hráč" />
          </children>
       </HBox>
    </top>

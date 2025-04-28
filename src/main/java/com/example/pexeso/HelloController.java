@@ -18,6 +18,12 @@ public class HelloController {
     @FXML
     private Label secondPlace;
     @FXML
+    private Label thirdPlace;
+    @FXML
+    private Label fourthPlace;
+    @FXML
+    private Label fifthPlace;
+    @FXML
     private Label onlinePlayer;
     @FXML
     private GridPane grid;
@@ -30,6 +36,9 @@ public class HelloController {
     private int currentPlayer = 1;
     private int score1 = 0;
     private int score2 = 0;
+    private int score3 = 0;
+    private int score4 = 0;
+    private int score5 = 0;
 
 
     @FXML
@@ -40,10 +49,24 @@ public class HelloController {
     }
 
     private void generateCards() {
-        for (int i = 1; i <= 8; i++) {
-            cards.add(new Card(i));
-            cards.add(new Card(i));
-        }
+        cards.add(new Card(1, "lemur.jpg"));
+        cards.add(new Card(2, "lev.jpg"));
+        cards.add(new Card(3, "liska.jpg"));
+        cards.add(new Card(4, "papousek.jpg"));
+        cards.add(new Card(5, "pes.jfif"));
+        cards.add(new Card(6, "rys.jpg"));
+        cards.add(new Card(7, "tygr.jpg"));
+        cards.add(new Card(8, "veverka.jpg"));
+
+
+        cards.add(new Card(1, "lemur.jpg"));
+        cards.add(new Card(2, "lev.jpg"));
+        cards.add(new Card(3, "liska.jpg"));
+        cards.add(new Card(4, "papousek.jpg"));
+        cards.add(new Card(5, "pes.jfif"));
+        cards.add(new Card(6, "rys.jpg"));
+        cards.add(new Card(7, "tygr.jpg"));
+        cards.add(new Card(8, "veverka.jpg"));
     }
 
     private void displayCards(){
@@ -61,7 +84,7 @@ public class HelloController {
     }
 
     private void handleCardClick(Card card) {
-        if (!canFlip || card.isMatched() || card.getTlacitko().getText() != "?"){
+        if (!canFlip || card.isMatched() || card.isFlipped()){
             return;
         }
         card.flip();
